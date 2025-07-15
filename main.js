@@ -1,6 +1,19 @@
 // Fonction pour gérer l'accordéon
 const headers = document.querySelectorAll(".accordion-header");
 
+function toggleAccordion(header) {
+  const content = header.nextElementSibling;
+
+  if (content.style.maxHeight) {
+    content.style.maxHeight = null;
+  } else {
+    document.querySelectorAll(".accordion-content").forEach((item) => {
+      item.style.maxHeight = null;
+    });
+    content.style.maxHeight = content.scrollHeight + "px";
+  }
+}
+
 headers.forEach((header) => {
   header.addEventListener("click", function () {
     const content = this.nextElementSibling;
