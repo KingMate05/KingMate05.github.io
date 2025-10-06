@@ -2,24 +2,15 @@ import { defineConfig } from "vite";
 import { ViteMinifyPlugin } from "vite-plugin-minify";
 
 export default defineConfig({
-  base: "/", // racine pour KingMate05.github.io
-  css: {
-    postcss: {},
-  },
-  sourcemap: true,
-  root: "src",
-
-  plugins: [
-    ViteMinifyPlugin({}), // juste le plugin minify
-  ],
-
+  base: "/", // racine pour un repo utilisateur
+  root: "src", // si ton index.html est dans src/
+  plugins: [ViteMinifyPlugin({})],
   build: {
     outDir: "../dist",
     emptyOutDir: true,
-
     rollupOptions: {
       input: {
-        index: "./src/index.html",
+        main: "./src/index.html",
       },
     },
   },
