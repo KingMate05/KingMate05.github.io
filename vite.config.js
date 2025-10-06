@@ -1,12 +1,13 @@
 import { defineConfig } from "vite";
 import { ViteMinifyPlugin } from "vite-plugin-minify";
+import { resolve } from "path";
 
 export default defineConfig({
-  base: "/", // ton site est à la racine (kingmate05.github.io)
-  root: "src", // ton index.html est dans src/
+  base: "/",
+  root: resolve(__dirname, "src"),
   plugins: [ViteMinifyPlugin({})],
   build: {
-    outDir: "../dist",
+    outDir: resolve(__dirname, "dist"),
     emptyOutDir: true,
   },
 });
