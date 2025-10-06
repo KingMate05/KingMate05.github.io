@@ -3,7 +3,7 @@ import { ViteMinifyPlugin } from "vite-plugin-minify";
 
 export default defineConfig({
   base: "/", // parfait car ton repo est kingmate05.github.io
-  root: "src", // si ton index.html est dans src/
+  root: "./src", // si ton index.html est dans src/
   plugins: [ViteMinifyPlugin({})],
   build: {
     outDir: "../dist",
