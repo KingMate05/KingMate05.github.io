@@ -1,4 +1,4 @@
-import "./scss/app.scss";
+import "./src/scss/app.scss";
 // Fonction pour gérer l'accordéon
 const headers = document.querySelectorAll(".accordion-header");
 
